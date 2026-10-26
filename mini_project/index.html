@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mini Project</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="image">
+        <img src="images/bg.jpg" alt="" />
+      </div>
+      <div class="formulir">
+        <div class="judul">
+          <div class="mobile">
+            <h3>Form Pendaftaran</h3>
+            <h1>Workshop</h1>
+            <p>Silakan isi formulir dibawah ini.</p>
+          </div>
+          <div class="desktop">
+            <h1>Form Pendaftaran Workshop</h1>
+            <p>Silakan isi formulir dibawah ini.</p>
+          </div>
+        </div>
+        <div id="error">
+          <span id="pesanError">Formulir wajib diisi.</span>
+        </div>
+        <form method="post" id="formPendaftaran" action="">
+          <div class="inputGroup">
+            <label>
+              <div class="inputLabel">
+                <p>Nama</p>
+                <span id="karakterNama">0</span>
+              </div>
+              <input type="text" id="nama" name="name" />
+            </label>
+            <label>
+              <div class="inputLabel">
+                <p>Email</p>
+                <span id="karakterEmail">0</span>
+              </div>
+              <input type="text" id="email" name="email" />
+            </label>
+            <label>
+              Pilih Sesi
+              <select name="sesi" id="sesi">
+                <option value="none" disabled selected>Pilih...</option>
+                <option value="pagi">Sesi 1 - Pagi</option>
+                <option value="siang">Sesi 2 - Siang</option>
+                <option value="sore">Sesi 3 - Sore</option>
+                <option value="malam">Sesi 4 - Malam</option>
+              </select>
+            </label>
+          </div>
+          <div class="buttonGroup">
+            <button class="submit" type="submit">Daftar</button>
+            <button class="reset" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

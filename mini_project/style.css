@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+.card {
+  display: flex;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  max-height: 500px;
+  max-width: fit-content;
+}
+
+.card .image img {
+  height: 450px;
+}
+
+.card .formulir {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100%;
+  margin: 0 30px;
+}
+
+form label,
+form select {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+#error {
+  display: none;
+  font-size: 12px;
+  color: red;
+}
+
+form label .inputLabel {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: end;
+}
+
+#karakterNama {
+  font-size: 12px;
+  display: none;
+}
+
+#karakterEmail {
+  font-size: 12px;
+  display: none;
+}
+
+form input,
+form select,
+form button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #2f2f2f;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.buttonGroup .submit {
+  flex: 5;
+  border: none;
+  font-weight: 500;
+  background-color: rgb(83, 210, 227);
+  cursor: pointer;
+}
+
+.buttonGroup .submit:hover {
+  background-color: rgb(179, 220, 206);
+}
+
+.buttonGroup .reset {
+  flex: 1;
+  border: none;
+  color: red;
+}
+
+.judul .mobile {
+  display: none;
+}
+
+.judul .desktop {
+  display: block;
+}
+
+@media (width <= 1095px) {
+  .card .image img {
+    display: none;
+  }
+}
+
+@media (width <= 588px) {
+  body {
+    display: block;
+    padding: 0;
+    background-color: aliceblue;
+  }
+  .card {
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 0;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .card .formulir {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .judul .mobile {
+    display: block;
+  }
+
+  .mobile h1 {
+    line-height: 35px;
+    font-size: 40px;
+    margin-bottom: 60px;
+  }
+  .mobile h3 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .judul .desktop {
+    display: none;
+  }
+
+  .buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttonGroup .reset {
+    border: none;
+    color: red;
+    background-color: rgb(255, 226, 226);
+  }
+}
