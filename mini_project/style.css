@@ -113,6 +113,10 @@ form button {
   display: block;
 }
 
+#info{
+  display: none;
+}
+
 @media (width <= 1095px) {
   .card .image img {
     display: none;

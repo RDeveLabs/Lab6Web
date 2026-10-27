@@ -35,6 +35,8 @@
 
 //   if (nama === "") {
 //     pesanForm.textContent = "Nama wajib diisi.";
+//   } else if (nama.length <= 3){
+//     pesanForm.textContent = "Masukkan nama, minimal 3 karakter"
 //   } else if (!polaEmail.test(email)) {
 //     pesanForm.textContent = "Masukkan email yang valid.";
 //   } else if (usiaInput === "" || !Number.isInteger(usia) || usia < 17 || usia > 100) {
@@ -45,31 +47,51 @@
 //   }
 // });
 
-const inputTugas = document.getElementById("inputTugas");
-const tambahTugas = document.getElementById("tambahTugas");
-const daftarTugas = document.getElementById("daftarTugas");
-const pesanTugas = document.getElementById("pesanTugas");
-tambahTugas.addEventListener("click", function () {
-  const teks = inputTugas.value.trim();
-  if (teks === "") {
-    pesanTugas.textContent = "Tulis tugas terlebih dahulu.";
-    return;
+// const inputTugas = document.getElementById("inputTugas");
+// const tambahTugas = document.getElementById("tambahTugas");
+// const daftarTugas = document.getElementById("daftarTugas");
+// const pesanTugas = document.getElementById("pesanTugas");
+// tambahTugas.addEventListener("click", function () {
+//   const teks = inputTugas.value.trim();
+//   if (teks === "") {
+//     pesanTugas.textContent = "Tulis tugas terlebih dahulu.";
+//     return;
+//   }
+//   const item = document.createElement("li");
+//   const label = document.createElement("span");
+//   const selesai = document.createElement("button");
+//   const hapus = document.createElement("button");
+//   label.textContent = teks + "";
+//   selesai.type = "button";
+//   hapus.type = "button";
+//   selesai.textContent = "Tandai selesai";
+//   hapus.textContent = "Hapus";
+//   selesai.addEventListener("click", function () {
+//     item.classList.toggle("selesai");
+//     selesai.textContent = item.classList.contains("selesai")
+//       ? "Batalkan selesai"
+//       : "Tandai selesai";
+//   });
+//   hapus.addEventListener("click", function(){
+//     daftarTugas.removeChild(item);
+//   })
+//   item.append(label, selesai, hapus);
+//   daftarTugas.appendChild(item);
+//   inputTugas.value = "";
+//   pesanTugas.textContent = "Tugas ditambahkan.";
+//   inputTugas.focus();
+// });
+
+const paragraf = document.getElementById("paragraf");
+const tombol = document.getElementById("toggle");
+let toggle = false
+tombol.addEventListener("click", () => {
+  if(toggle){
+    toggle = false
+  }else{
+    toggle = true
   }
-  const item = document.createElement("li");
-  const label = document.createElement("span");
-  const selesai = document.createElement("button");
-  label.textContent = teks + " ";
-  selesai.type = "button";
-  selesai.textContent = "Tandai selesai";
-  selesai.addEventListener("click", function () {
-    item.classList.toggle("selesai");
-    selesai.textContent = item.classList.contains("selesai")
-      ? "Batalkan selesai"
-      : "Tandai selesai";
-  });
-  item.append(label, selesai);
-  daftarTugas.appendChild(item);
-  inputTugas.value = "";
-  pesanTugas.textContent = "Tugas ditambahkan.";
-  inputTugas.focus();
-});
+  tombol.textContent = toggle? "Tampilkan" : "Sembunyikan";
+  console.log(toggle);
+  paragraf.classList.toggle("sembunyi");
+})

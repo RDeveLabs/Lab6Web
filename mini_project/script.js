@@ -56,3 +56,12 @@ inputEmail.addEventListener("input", function () {
     karakterEmail.style.display = "none";
   }
 });
+
+
+const dropdown = document.getElementById("sesi");
+const info = document.getElementById("info");
+const pilihan = document.getElementById("pilihan");
+dropdown.addEventListener("change", function(){
+  info.style.display = 'block';
+  pilihan.textContent = dropdown.value;
+})
